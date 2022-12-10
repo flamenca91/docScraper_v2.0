@@ -13,17 +13,6 @@ for line in f:
     line = line.split()
     docFile[line[0]] = line[1]
 
-'''
-def GetDocDict(filename):
-    global docFile
-    dodFile = {}
-    f = open(filename)
-    #f = open("DocTagsList.txt")
-    for line in f:
-        line = line.split()
-        docFile[line[0]] = line[1]
-'''
-
 filePath = "C:/Users/steph/OneDrive/Desktop/Docs_Project/"
 docFileList = list(docFile.keys())                  # This is a list of all main tags found in each document
 
