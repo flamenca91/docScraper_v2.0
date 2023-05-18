@@ -2,15 +2,12 @@ import docx
 #from docx import Document
 #from docx.shared import RGBColor
 import re
-import docx
-from docx import Document
 from docSearch import *
 #import xlwings
 
 #************************************ Uses GetVerifiedUniqueTrailingTags() to find *************************************
 
 def GetRelationalList():
-    doc = Document()
     fList = []
     sList = []
     thList = []
@@ -36,10 +33,6 @@ def GetRelationalList():
                 if fList[i] in item and sList[i] in item and re.search(r'\b(' + thList[i] + r')\b', item):
                     if printItem == 0:
                         print(fList[i] + ":" + sList[i] + ":" + thList[i])
-                        p = doc.add_paragraph()
-                        runner = p.add_run(fList[i] + ":" + sList[i] + ":" + thList[i])
-                        runner.bold =  True
-                        runner.italic = True
                     printItem = printItem + 1
                     indexList.append(ind)
             ind = ind + 1
@@ -47,7 +40,4 @@ def GetRelationalList():
         for id in indexList:
             indexing = relLeadTags[1][id]
             print(indexing)
-            doc.add_paragraph(indexing, style="List Bullet")
         print("\n")
-        doc.add_paragraph("\n")
-        doc.save("OutputDoc.docx")
