@@ -1,0 +1,49 @@
+# To create environment: Go to File/Settings/Project:pythonProject/Python Interpretor
+# Click on drop down arrow and choose python interpretor and select Add Interpretor
+# Click on the '+' sign and type in python-docs and install
+# Search for xlWings and select install
+
+Lists    ->  [  ]
+Tuples   ->  (  )
+Dictionary  ->  {key1:value, key2:value}
+
+# docRelations is dictionary that hold tuples of child tags as Values. The Keys are all the parent tags
+# docFile is a dictionary that holds the tags as Keys and the file where they are found as a ValueError
+
+list(Dict.Keys())  # This returns a list of all keys
+# list(docFile.Keys()) returns a list of all parent tags called docFileList
+
+#filePath variable is the location of the directory of all documents
+
+###  GetText() function -  Extracts all lines of any document and converts it into a list format (paragraph by paragraph)
+
+for dummyVar in Collection  # Where the collection is a set of paragraphs extracted from the document
+
+# Appends each paragraph to the list called fullText
+# Using list comprehension, you stip out all the empty list characters or any leading or trailing whitespaces
+
+## GetParentTags() function - Returns all the parent tags from every document
+for dummyVar in collection  # Where collection is the list of parent tags (docFileList) - dummyVar is the parent tags
+
+docFile[tag] # returns the value of the dictionary docFile using the tag Key and the value is the document name.
+
+# Go into the list of document paragraphs and use regular expressions to return all the unique parent tags with detail (numbers, etc)
+
+\S  - Non-WhiteSpace 
+.*  - #Where the . means any character and the * means zero or more of these
+
+# The pattern needs to be in quotes
+# Example '\S*:HDS:\S*'  -  Zero or more Non-WhiteSpaces followed a colon, followed by the tag (HDS), follow by a colon, followed
+                          # by Zero or more Non-WhiteSpaces
+                          
+# The HDS tag needs to be replaced for each iteration of the for loop with whatever is in the list of parent tags
+# Use concatenation to build a regular expression
+'\S*:' +  re.escape(tag)  + ':\S*'
+# re.escape allows the use of variables in the regular expression.
+
+list comprehension return tpe goes first then the four floop  last one do condition
+
+return something eelement into a list, 
+goes to four loop- last strips rids white spaces, grabs all white spaces and stores back into list
+none white spaces followed by keyword
+
